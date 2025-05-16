@@ -1,5 +1,78 @@
 ---
+import SubTitle from "@components/sub-title.astro";
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+const list = [
+  {
+    icon: "lucide:hand-heart",
+    number: 3593,
+    title: "Happy Users",
+  },
+  {
+    icon: "lucide:recycle",
+    number: 2815,
+    title: "Recycling Completed",
+  },
+  {
+    icon: "lucide:leaf",
+    number: 21,
+    title: "Eco-Friendly",
+  },
+  {
+    icon: "lucide:trash-2",
+    number: 1423,
+    title: "Waste Managed",
+  },
+];
 ---
 
-<section class="min-h-screen">
+<section class="py-28 relative bg-burnham-700 overflow-hidden">
+  <div class="container relative z-1 space-y-14">
+    <div class="flex justify-center flex-col text-center gap-1">
+      <SubTitle
+        icon="lucide:chart-line"
+        title="Dedication Numbers"
+        class="mx-auto"
+      />
+      <h2 class="text-white text-4xl">Trash Collector's Impact in Numbers</h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8">
+      {
+        list.map((item, idx) => {
+          const isEven = idx % 2 === 0;
+          return (
+            <div class="max-w-60 w-full flex gap-1 flex-col text-center">
+              <div
+                class={cn(
+                  "p-6 rounded-full mx-auto mb-3",
+                  isEven
+                    ? "bg-white text-pistachio-500"
+                    : "bg-pistachio-500 text-white"
+                )}
+              >
+                <Icon name={item.icon} class="size-12" />
+              </div>
+              <div
+                class={cn(
+                  "text-4xl font-chivo font-bold",
+                  isEven ? "text-pistachio-500" : "text-white"
+                )}
+              >
+                <span
+                  x-data={`counter(${item.number}, 400)`}
+                  x-intersect.once="update"
+                  x-text="Math.round(current)"
+                />
+                <span class="mb-1">+</span>
+              </div>
+              <div class="font-chivo text-lg text-white">{item.title}</div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <img class="absolute right-0 top-0 h-full max-h-[620px] w-auto" src="/images/landing/leaves.png" alt="Decorator">
+  <img class="absolute left-0 bottom-0 h-full max-h-[620px] w-auto rotate-180" src="/images/landing/leaves.png" alt="Decorator">
 </section>

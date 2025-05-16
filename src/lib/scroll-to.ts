@@ -1,4 +1,4 @@
-function ScrollTo(el: HTMLElement) {
+function scrollTo(el: HTMLElement) {
     const targetId = el.getAttribute('href')?.split('#')[1];
     if (!targetId) return;
     const scrollEl = document.getElementById(targetId);
@@ -12,4 +12,4 @@ function ScrollTo(el: HTMLElement) {
     });
 }
 
-export default ScrollTo
+export default scrollTo

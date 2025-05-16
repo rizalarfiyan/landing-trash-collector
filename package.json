@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.14.9",
     "@astrojs/alpinejs": "^0.4.8",
     "@iconify-json/lucide": "^1.2.43",
     "@iconify-json/ri": "^1.2.5",
