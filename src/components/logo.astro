@@ -1,0 +1,37 @@
+---
+import { SITE } from "@config";
+import { cn } from "@utils";
+
+interface Props {
+  class?: string;
+  stroke?: number;
+}
+
+const { class: className, stroke = 1.75 } = Astro.props;
+const classes = cn("flex items-center gap-1", className);
+---
+
+<div class={classes}>
+  <svg
+    class="size-12 fill-none stroke-current"
+    viewBox="0 0 32 32"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke-width={stroke}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M4 8h24m-2.667 0v18.667c0 1.333-1.333 2.666-2.666 2.666H9.333C8 29.333 6.667 28 6.667 26.667V8m4 0V5.333C10.667 4 12 2.667 13.333 2.667h5.334C20 2.667 21.333 4 21.333 5.333V8"
+    ></path>
+    <path
+      d="M12.667 22.667H11.21a1.22 1.22 0 0 1-1.047-.588 1.19 1.19 0 0 1-.002-1.189l2.636-4.557m2.536 6.334h5.469a1.22 1.22 0 0 0 1.037-.594 1.19 1.19 0 0 0 0-1.183l-.817-1.413"
+    ></path>
+    <path
+      d="m17.333 20.667-2 2 2 2m-3.804-5.603-.732-2.73-2.73.731m4.163-3.191.728-1.261A1.22 1.22 0 0 1 15.99 12a1.19 1.19 0 0 1 1.03.592l2.63 4.562"
+    ></path>
+    <path d="m16.919 16.422 2.73.732.732-2.73"></path>
+  </svg>
+  <div class="text-xl font-bold font-chivo leading-none uppercase max-w-32">
+    {SITE.title}
+  </div>
+</div>

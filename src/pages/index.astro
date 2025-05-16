@@ -1,35 +1,37 @@
 ---
+import { SITE } from "@config";
+
 import "../styles/global.css";
+
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Coming Soon</title>
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="Trash Collector" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-	</head>
-	<body class="text-white bg-[#0f172a] font-sans antialiased">
-		<div class="min-h-screen w-full h-full flex items-center justify-center flex-col space-y-8 text-center py-10 px-2">
-			<h1 class="text-6xl font-extrabold text-white font-poppins">Coming Soon<span class="text-[#3b82f6]">.</span></h1>
-			<div class="space-y-2">
-				<div class="text-xl"><b>Created by:</b></div>
-				<ul>
-					<li>Muhamad Rizal Arfiyan <b>(22.11.5227)</b></li>
-					<li>Gilang Nur Hidayat <b>(22.11.5196)</b></li>
-					<li>Damar Galih <b>(22.11.5209)</b></li>
-				</ul>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE.title}</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content={SITE.title} />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&family=Tinos:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="scroll-smooth break-words antialiased font-tinos bg-white">
+    <Header />
+    <main>
+      <!-- Content here -->
+    </main>
+    <Footer />
+  </body>
 </html>

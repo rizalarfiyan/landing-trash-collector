@@ -5,8 +5,45 @@
     --color-white: #fff;
     --color-black: #000;
     --color-transparent: transparent;
+
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cad5e2;
+    --color-slate-400: #90a1b9;
+    --color-slate-500: #62748e;
+    --color-slate-600: #45556c;
+    --color-slate-700: #314158;
+    --color-slate-800: #1d293d;
+    --color-slate-900: #0f172b;
+    --color-slate-950: #020618;
+
+    --color-burnham-50: #eefdf2;
+    --color-burnham-100: #d3f6e0;
+    --color-burnham-200: #99e4bd;
+    --color-burnham-300: #43c594;
+    --color-burnham-400: #009e6f;
+    --color-burnham-500: #007955;
+    --color-burnham-600: #005639;
+    --color-burnham-700: #003e27;
+    --color-burnham-800: #002d1b;
+    --color-burnham-900: #002213;
+    --color-burnham-950: #000b04;
+    --color-pistachio-50: #f8fbea;
+
+    --color-pistachio-100: #edf5d2;
+    --color-pistachio-200: #dbecaa;
+    --color-pistachio-300: #c2de78;
+    --color-pistachio-400: #a9cd4e;
+    --color-pistachio-500: #93bd33;
+    --color-pistachio-600: #6b8e22;
+    --color-pistachio-700: #526c1f;
+    --color-pistachio-800: #43571d;
+    --color-pistachio-900: #394a1d;
+    --color-pistachio-950: #1d280b;
     
-    --font-poppins: "Poppins", sans-serif;
+    --font-chivo: "Chivo", sans-serif;
+    --font-tinos: "Tinos", serif;
 }
 
 @layer utilities {

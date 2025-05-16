@@ -1,0 +1,17 @@
+---
+import { SITE } from "@config";
+import Logo from "./logo.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-burnham-900 text-pistachio-100">
+  <div class="container flex items-center justify-between gap-4 py-10">
+    <Logo />
+    <div class="font-semibold font-chivo">
+      <span>Copyright &#169; {year} {SITE.title}.</span>
+      <span> | All Right Reserved.</span>
+    </div>
+    <div></div>
+  </div>
+</footer>
