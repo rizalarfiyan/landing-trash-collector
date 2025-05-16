@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -8,9 +8,22 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Coming Soon</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="text-white bg-slate-900 font-sans antialiased">
+		<div class="min-h-screen w-full h-full flex items-center justify-center flex-col space-y-8 text-center py-10 px-2">
+			<h1 class="text-6xl font-extrabold text-white font-poppins">coming soon<span class="text-blue-500">.</span></h1>
+			<div class="space-y-2">
+				<div class="text-xl"><b>Created by:</b></div>
+				<ul>
+					<li>Muhamad Rizal Arfiyan <b>(22.11.5227)</b></li>
+					<li>Gilang Nur Hidayat <b>(22.11.5196)</b></li>
+					<li>Damar Galih <b>(22.11.5209)</b></li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
