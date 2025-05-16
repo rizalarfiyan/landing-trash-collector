@@ -9,6 +9,7 @@
       "@constant": ["constant.ts"],
       "@utils": ["utils.ts"],
       "@pages/*": ["pages/*"],
+      "@lib/*": ["lib/*"],
       "@sections/*": ["sections/*"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"]

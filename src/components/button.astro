@@ -1,0 +1,60 @@
+---
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {
+  variant?: "burnham" | "pistachio";
+  size?: "base" | "lg";
+  icon?: string;
+  iconPosition?: "left" | "right";
+  text: string;
+}
+
+const {
+  size = "base",
+  variant = "burnham",
+  icon,
+  iconPosition = "right",
+  text,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const buttonSize = {
+  base: "px-5 py-2 text-base gap-2",
+  lg: "px-8 py-3 text-lg gap-3",
+};
+
+const buttonVariant = {
+  burnham: "bg-burnham-500 hover:bg-burnham-600 text-white",
+  pistachio: "bg-pistachio-500 hover:bg-pistachio-600 text-white",
+};
+
+const iconSize = {
+  base: "size-4",
+  lg: "size-5 large",
+};
+---
+
+<button
+  class={cn(
+    "flex items-center transition-colors duration-300 font-bold font-chivo rounded-md cursor-pointer",
+    buttonSize[size],
+    buttonVariant[variant],
+    className,
+  )}
+  {...rest}
+>
+  {
+    icon && iconPosition === "left" && (
+      <Icon name={icon} class={iconSize[size]} />
+    )
+  }
+  <span>{text}</span>
+  {
+    icon && iconPosition === "right" && (
+      <Icon name={icon} class={iconSize[size]} />
+    )
+  }
+</button>

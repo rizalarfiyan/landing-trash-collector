@@ -1,10 +1,21 @@
 ---
 import { SITE } from "@config";
 
-import "../styles/global.css";
+import "@styles/global.css";
 
 import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
+import Hero from "@sections/hero.astro";
+import DedicationNumber from "@sections/dedication-number.astro";
+import OurService from "@sections/our-service.astro";
+import AboutUs from "@sections/about-us.astro";
+import HowItWork from "@sections/how-it-work.astro";
+import EarnPoint from "@sections/earn-point.astro";
+import WhatWeDo from "@sections/what-we-do.astro";
+import Testimonial from "@sections/testimonial.astro";
+import OurPartner from "@sections/our-partner.astro";
+import OurTeam from "@sections/our-team.astro";
+import ListOfFaq from "@sections/list-of-faq.astro";
 ---
 
 <html lang="en">
@@ -30,7 +41,17 @@ import Footer from "@components/footer.astro";
   <body class="scroll-smooth break-words antialiased font-tinos bg-white">
     <Header />
     <main>
-      <!-- Content here -->
+      <Hero />
+      <DedicationNumber />
+      <OurService />
+      <AboutUs />
+      <HowItWork />
+      <EarnPoint />
+      <WhatWeDo />
+      <Testimonial />
+      <OurPartner />
+      <OurTeam />
+      <ListOfFaq />
     </main>
     <Footer />
   </body>

@@ -8,26 +8,26 @@ export const SOCIALS: Social[] = [
     {
         href: 'https://facebook.com/',
         title: `${SITE.title} on Facebook`,
-        icon: 'facebook',
+        icon: 'ri:facebook-box-fill',
     },
     {
         href: 'https://x.com/',
         title: `${SITE.title} on Twitter`,
-        icon: 'twitter',
+        icon: 'ri:twitter-x-fill',
     },
     {
         href: 'https://instagram.com/',
         title: `${SITE.title} on Instagram`,
-        icon: 'instagram',
+        icon: 'ri:instagram-fill',
     },
     {
         href: 'https://linkedin.com/',
         title: `${SITE.title} on Linkedin`,
-        icon: 'linkedin',
+        icon: 'ri:linkedin-box-fill',
     },
     {
         href: 'https://youtube.com/',
         title: `${SITE.title} on Youtube`,
-        icon: 'youtube',
+        icon: 'ri:youtube-fill',
     },
 ]
