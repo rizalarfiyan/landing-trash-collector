@@ -1,5 +1,134 @@
 ---
+import SubTitle from "@components/sub-title.astro";
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+const services = [
+  {
+    title: "Scheduled Trash Pickup",
+    description:
+      "Whenever you need, schedule a service without having to wait for the trash to pile up. Everything becomes easier and more organized.",
+    icon: "lucide:truck",
+    detail: "Operation Hours",
+    list: [
+      {
+        title: "Morning",
+        icon: "lucide:sunrise",
+      },
+      {
+        title: "Afternoon",
+        icon: "lucide:sun",
+      },
+      {
+        title: "Evening",
+        icon: "lucide:sunset",
+      },
+    ],
+  },
+  {
+    title: "Exclusive Rewards",
+    description:
+      "Use your points to redeem scheduled trash pickup services. Daily or weekly schedules, keep the environment clean and comfortable. ",
+    icon: "lucide:gift",
+    detail: "More Rewards",
+    list: [
+      {
+        title: "E-Money",
+        icon: "lucide:dollar-sign",
+      },
+      {
+        title: "Drink & Food",
+        icon: "lucide:utensils",
+      },
+      {
+        title: "E-Voucher",
+        icon: "lucide:ticket-percent",
+      },
+    ],
+  },
+  {
+    title: "Recycling Services",
+    description:
+      "Earn points by recycling organic, non-organic, and hazardous waste through our trusted services. Help protect the environment while saving rewards.",
+    icon: "lucide:recycle",
+    detail: "Waste Types",
+    list: [
+      {
+        title: "Organic",
+        icon: "lucide:leafy-green",
+      },
+      {
+        title: "Non-Organic",
+        icon: "lucide:cup-soda",
+      },
+      {
+        title: "Hazardous",
+        icon: "lucide:biohazard",
+      },
+    ],
+  },
+  {
+    title: "Guides and Resources",
+    description:
+      "Stay informed with the latest news, explore in-depth blogs and join our community socialization events to improve your waste management habits. ",
+    icon: "lucide:book",
+    detail: "Content Types",
+    list: [
+      {
+        title: "News",
+        icon: "lucide:newspaper",
+      },
+      {
+        title: "Blog",
+        icon: "lucide:file-text",
+      },
+      {
+        title: "Socialization",
+        icon: "lucide:speech",
+      },
+    ],
+  },
+];
 ---
 
-<section id="our-service" class="min-h-screen">
+<section id="our-service" class="py-28 relative bg-pistachio-50">
+  <div class="container space-y-14">
+    <div class="space-y-1 max-w-4xl">
+      <SubTitle icon="lucide:trash-2" title="Our Services" class="mx-auto" />
+      <h2 class="text-5xl text-burnham-900">What Makes Trash Collector Stand Out in Smart Waste Management</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
+        {services.map((service, idx) => {
+            const isEven = idx % 2 === 0;
+            const num = String(idx+1).padStart(2, '0');
+            return (
+                <div class="rounded-xl overflow-hidden bg-white">
+                    <div class="p-8 space-y-3 relative">
+                        <span class="text-[150px] font-tinos font-black text-pistachio-100 absolute z-1 -top-16 right-0">{num}.</span>
+                        <div class="p-4 inline-block rounded-lg bg-pistachio-100 text-pistachio-500 mr-auto">
+                            <Icon name={service.icon} class="size-12" />
+                        </div>
+                        <div class="space-y-2 max-w-xl">
+                            <h3 class="text-2xl text-slate-900">{service.title}</h3>
+                            <p class="text-slate-700">{service.description}</p>
+                        </div>
+                    </div>
+                    <div class={cn('px-8 py-6 space-y-2', isEven ? 'bg-pistachio-100 text-burnham-700' : 'bg-pistachio-900 text-white')}>
+                        <h4 class="text-xl">{service.detail}</h4>
+                        <div class="flex items-center gap-5">
+                            {service.list.map((item) => (
+                                <div class="flex gap-2 items-center">
+                                    <div class={cn('p-1.5 rounded-full text-white', isEven ? 'bg-burnham-500' : 'bg-burnham-400')}>
+                                        <Icon name={item.icon} class="size-4" />
+                                    </div>
+                                    <div>{item.title}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )
+        })}
+    </div>
+  </div>
 </section>
