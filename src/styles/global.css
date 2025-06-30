@@ -46,6 +46,16 @@
 
   --font-chivo: "Chivo", sans-serif;
   --font-tinos: "Tinos", serif;
+
+  --animate-logo-wall: logo-wall 20s linear infinite;
+  @keyframes logo-wall {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }
 }
 
 @layer utilities {
