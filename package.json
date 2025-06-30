@@ -11,16 +11,16 @@
   "dependencies": {
     "@alpinejs/intersect": "^3.14.9",
     "@astrojs/alpinejs": "^0.4.8",
-    "@iconify-json/lucide": "^1.2.43",
+    "@iconify-json/lucide": "^1.2.54",
     "@iconify-json/ri": "^1.2.5",
-    "@tailwindcss/vite": "^4.1.5",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.14.9",
-    "astro": "^5.7.10",
+    "astro": "^5.10.1",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.5"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.1.4"
