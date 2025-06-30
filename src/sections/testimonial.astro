@@ -1,5 +1,125 @@
 ---
+import SubTitle from "@components/sub-title.astro";
+import { Icon } from "astro-icon/components";
+
+const testimonials = [
+  {
+    location: "Yogyakarta",
+    name: "Paijo Yo Royo",
+    title: "Bapack Bapack Facebook",
+    avatar: "https://i.pravatar.cc/150?u=tono",
+    quote:
+      "Since using Trash Collector, waste management in my business has become much more organized and efficient. The pickup schedule is very flexible, and I can monitor everything through an easy-to-use dashboard.",
+  },
+  {
+    location: "Jakarta",
+    name: "Siti Nurbaya",
+    title: "Pengusaha Katering",
+    avatar: "https://i.pravatar.cc/150?u=siti",
+    quote:
+      "The service is incredibly reliable. It's not just about throwing away trash, it's also about being environmentally responsible. Thank you Trash Collector! I highly recommend them to everyone.",
+  },
+  {
+    location: "Surabaya",
+    name: "Budi Santoso",
+    title: "Manajer Restoran",
+    avatar: "https://i.pravatar.cc/150?u=budi",
+    quote:
+      "A fantastic solution for businesses. The responsive customer support and transparent pricing are what sold me. Our waste management costs have decreased, and our environmental footprint is smaller.",
+  },
+  {
+    location: "Bandung",
+    name: "Dewi Lestari",
+    title: "Pemilik Kafe",
+    avatar: "https://i.pravatar.cc/150?u=dewi",
+    quote:
+      "I love how easy it is to schedule pickups and track our recycling progress. The platform is intuitive and the team is always helpful. It has streamlined our operations significantly.",
+  },
+];
 ---
 
-<section id="testimonial" class="min-h-screen">
+<section id="testimonial" class="py-20 md:py-28 bg-white overflow-x-hidden">
+  <div class="container" x-data="slider" x-init="init()">
+    <div
+      class="text-center mx-auto space-y-1 max-w-3xl flex flex-col items-center"
+    >
+      <SubTitle icon="lucide:thumbs-up" title="Testimonials" class="mx-auto" />
+      <h2 class="text-5xl text-burnham-900">What Our Clients Have to Say</h2>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative mt-12 px-10 md:px-14">
+      <div class="relative">
+        <div class="overflow-hidden py-4" x-ref="embla">
+          <div class="flex select-none">
+            {
+              testimonials.map(({ avatar, location, name, quote, title }) => (
+                <div class="flex-shrink-0 flex-grow-0 basis-full min-w-0 px-4">
+                  <div class="bg-white rounded-xl border border-slate-200 shadow-lg p-8 md:p-12 h-full">
+                    <div class="md:flex md:items-start md:gap-12">
+                      <div class="w-full md:w-auto md:max-w-xs flex-shrink-0 space-y-6">
+                        <div class="font-bold text-xl text-burnham-800">
+                          {location}
+                        </div>
+                        <div class="flex items-center gap-4">
+                          <div class="size-20 rounded-lg object-cover overflow-hidden flex-shrink-0 bg-pistachio-100">
+                            <img
+                              src={avatar}
+                              alt={`Avatar ${name}`}
+                              class="w-full h-full"
+                            />
+                          </div>
+                          <div>
+                            <h3 class="font-bold text-xl text-burnham-900">
+                              {name}
+                            </h3>
+                            <p class="text-sm text-slate-500">{title}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex-grow bg-pistachio-100 rounded-2xl relative w-full p-8 pt-16">
+                        <Icon
+                          name="lucide:quote"
+                          class="absolute top-6 left-6 size-16 text-pistachio-200 -rotate-12"
+                          stroke-width="1"
+                        />
+                        <p class="relative text-burnham-900">{quote}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:block">
+        <button
+          @click="embla.scrollPrev()"
+          class="absolute left-0 top-1/2 -translate-y-1/2 text-pistachio-400 hover:text-pistachio-600 transition-colors cursor-pointer"
+          aria-label="Previous testimonial"
+        >
+          <Icon name="lucide:chevron-left" class="size-10" />
+        </button>
+        <button
+          @click="embla.scrollNext()"
+          class="absolute right-0 top-1/2 -translate-y-1/2 text-pistachio-400 hover:text-pistachio-600 transition-colors cursor-pointer"
+          aria-label="Next testimonial"
+        >
+          <Icon name="lucide:chevron-right" class="size-10" />
+        </button>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-2.5 mt-4">
+      <template x-for="(dot, index) in dots" :key="index">
+        <button
+          @click="embla.scrollTo(index)"
+          :class="{ 'bg-burnham-800 w-5': index === selected, 'bg-slate-300 w-2.5': index !== selected, }"
+          class="h-2.5 rounded-full transition-all duration-300 cursor-pointer"
+          :aria-label="'Go to slide ' + (index + 1)"></button>
+      </template>
+    </div>
+  </div>
 </section>
