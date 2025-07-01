@@ -1,48 +1,71 @@
 ---
-import GoogleAnalytics from "../components/GoogleAnalytics.astro";
-import "../styles/global.css";
+import { SITE } from "@config";
+
+import "@styles/global.css";
+
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import Hero from "@sections/hero.astro";
+import DedicationNumber from "@sections/dedication-number.astro";
+import OurService from "@sections/our-service.astro";
+import AboutUs from "@sections/about-us.astro";
+import HowItWork from "@sections/how-it-work.astro";
+import EarnPoint from "@sections/earn-point.astro";
+import WhatWeDo from "@sections/what-we-do.astro";
+import Testimonial from "@sections/testimonial.astro";
+import OurPartner from "@sections/our-partner.astro";
+import OurTeam from "@sections/our-team.astro";
+import ListOfFaq from "@sections/list-of-faq.astro";
+import GoogleAnalytics from "@components/GoogleAnalytics.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Trash Collector</title>
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="Trash Collector" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<GoogleAnalytics id="G-0XZF8Y3LFE" />
-		<meta name="description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
-		<meta name="keywords" content="Trash Collector, Waste Management, Efficient Trash Collection, Sustainability" />
-		<meta name="author" content="Muhamad Rizal Arfiyan, Gilang Nur Hidayat, Damar Galih" />
-		<meta property="og:title" content="Trash Collector - Manage Waste Efficiently" />
-		<meta property="og:description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
-		<meta property="og:image" content="/web-app-manifest-512x512.png" />
-		<meta property="og:url" content="https://trash-collector.rizalarfiyan.com" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Trash Collector - Manage Waste Efficiently" />
-		<meta name="twitter:description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
-		<meta name="twitter:image" content="/web-app-manifest-512x512.png" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-	</head>
-	<body class="text-white bg-[#0f172a] font-sans antialiased">
-		<div class="min-h-screen w-full h-full flex items-center justify-center flex-col space-y-8 text-center py-10 px-2">
-			<h1 class="text-6xl font-extrabold text-white font-poppins">Coming Soon<span class="text-[#3b82f6]">.</span></h1>
-			<div class="space-y-2">
-				<div class="text-xl"><b>Created by:</b></div>
-				<ul>
-					<li>Muhamad Rizal Arfiyan <b>(22.11.5227)</b></li>
-					<li>Gilang Nur Hidayat <b>(22.11.5196)</b></li>
-					<li>Damar Galih <b>(22.11.5209)</b></li>
-				</ul>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE.title}</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content={SITE.title} />
+    <link rel="manifest" href="/site.webmanifest" />
+	<GoogleAnalytics id="G-0XZF8Y3LFE" />
+	<meta name="description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
+	<meta name="keywords" content="Trash Collector, Waste Management, Efficient Trash Collection, Sustainability" />
+	<meta name="author" content="Muhamad Rizal Arfiyan, Gilang Nur Hidayat, Damar Galih" />
+	<meta property="og:title" content="Trash Collector - Manage Waste Efficiently" />
+	<meta property="og:description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
+	<meta property="og:image" content="/web-app-manifest-512x512.png" />
+	<meta property="og:url" content="https://trash-collector.rizalarfiyan.com" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Trash Collector - Manage Waste Efficiently" />
+	<meta name="twitter:description" content="Trash Collector - Manage waste efficiently with our innovative platform." />
+	<meta name="twitter:image" content="/web-app-manifest-512x512.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&family=Tinos:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="scroll-smooth break-words antialiased font-tinos bg-white">
+    <Header />
+    <main>
+      <Hero />
+      <DedicationNumber />
+      <OurService />
+      <AboutUs />
+      <HowItWork />
+      <EarnPoint />
+      <WhatWeDo />
+      <Testimonial />
+      <OurPartner />
+      <OurTeam />
+      <ListOfFaq />
+    </main>
+    <Footer />
+  </body>
 </html>

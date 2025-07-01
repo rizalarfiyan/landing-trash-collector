@@ -9,11 +9,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.5",
-    "astro": "^5.7.10",
-    "tailwindcss": "^4.1.5"
+    "@alpinejs/collapse": "^3.14.9",
+    "@alpinejs/intersect": "^3.14.9",
+    "@astrojs/alpinejs": "^0.4.8",
+    "@iconify-json/lucide": "^1.2.54",
+    "@iconify-json/ri": "^1.2.5",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.14.9",
+    "astro": "^5.10.1",
+    "astro-icon": "^1.1.5",
+    "clsx": "^2.1.1",
+    "embla-carousel": "^8.6.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.1.4"
+    "@astrojs/partytown": "^2.1.4",
+    "@types/alpinejs__collapse": "^3.13.4",
+    "@types/alpinejs__intersect": "^3.13.4"
   }
 }

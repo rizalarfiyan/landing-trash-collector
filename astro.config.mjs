@@ -2,6 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import partytown from '@astrojs/partytown'
+import icon from "astro-icon";
+
+import alpinejs from '@astrojs/alpinejs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,11 +17,14 @@ export default defineConfig({
         debug: false,
       }
     }),
+    icon(),
+    alpinejs({
+      entrypoint: '/src/entrypoint'
+    })
   ],
+  scopedStyleStrategy: 'where',
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
     esbuild: {
       legalComments: 'none',
     },
@@ -30,8 +36,4 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    assets: 'public',
-  },
-  scopedStyleStrategy: 'where'
 });

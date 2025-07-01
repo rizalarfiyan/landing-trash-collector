@@ -1,0 +1,94 @@
+---
+import Button from "@components/button.astro";
+import SubTitle from "@components/sub-title.astro";
+import { SITE } from "@config";
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+const contents = [
+  {
+    title: "How to Earn Points?",
+    description:
+      "You can earn points by scheduling regular trash pickups and using our recycling services for organic, non-organic and hazardous waste.",
+    icon: "lucide:coins",
+  },
+  {
+    title: "What Can You Use Points For?",
+    description:
+      "Your points can be exchanged for various items, ranging from vouchers, credit or basic necessities.",
+    icon: "lucide:gift",
+  },
+];
+---
+
+<section id="earn-points" class="py-20 md:py-28">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row gap-y-20 gap-x-16 items-center justify-between">
+      <div class="w-full lg:w-1/2 space-y-6 lg:pr-10">
+        <div class="space-y-3 max-w-xl">
+          <SubTitle icon="lucide:coins" title="Earn Points" />
+          <h2 class="text-4xl md:text-5xl text-burnham-900 !leading-tight">
+            More Points, More Profits!
+          </h2>
+          <p class="text-base text-burnham-700 pt-2">
+            Collect more points every time you schedule a trash pick-up service.
+            The more active you are in contributing, the more benefits you can
+            enjoy! <b>Redeem your points for various items, ranging from
+            vouchers, credit or groceries</b>.
+          </p>
+        </div>
+        <div class="space-y-6 pt-4">
+          {
+            contents.map((content) => (
+              <div class="flex gap-5 items-start">
+                <div
+                  class="flex-shrink-0 bg-pistachio-100 p-4 rounded-lg border border-pistachio-100"
+                >
+                  <Icon name={content.icon} class="size-10 text-pistachio-500" />
+                </div>
+                <div class="space-y-1">
+                  <h3 class="text-xl md:text-2xl text-pistachio-900 font-bold">
+                    {content.title}
+                  </h3>
+                  <p class="text-burnham-700 text-base">{content.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="pt-4">
+          <Button text="LEARN MORE" icon="lucide:arrow-up-right" />
+        </div>
+      </div>
+
+      <div class="max-w-xl w-full relative">
+        <div
+          class="flex items-center justify-center rounded-lg bg-pistachio-50 w-full h-auto overflow-hidden aspect-square"
+        >
+          <img
+            src="/images/landing/gift.png"
+            class="mx-auto"
+            alt={SITE.title}
+          />
+        </div>
+        <div class="absolute -bottom-[52px] right-12 overflow-hidden rounded-lg">
+          <div
+            class="relative flex items-center justify-center px-6 py-4 bg-pistachio-900"
+          >
+            <img
+              src="/images/landing/map.png"
+              alt="Indonesia Map"
+              class="absolute opacity-20 h-[calc(100%_-_1.5rem)]"
+            />
+            <div class="text-6xl text-white font-chivo font-black">1945+</div>
+          </div>
+          <div class="bg-pistachio-600 px-8 py-3">
+            <div class="text-xl text-white font-chivo font-bold">
+                Satisfied Users
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

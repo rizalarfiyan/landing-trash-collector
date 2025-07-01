@@ -1,0 +1,19 @@
+---
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    icon: string;
+    title: string;
+    class?: string;
+}
+
+const { icon, title, class: className } = Astro.props;
+---
+
+<div class={cn('flex items-center gap-2', className)}>
+    <Icon name={icon} class='text-pistachio-500 size-5 large' />
+    <div class="text-lg font-bold text-pistachio-500 font-chivo uppercase">
+        {title}
+    </div>
+</div>

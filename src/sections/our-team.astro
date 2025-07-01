@@ -1,0 +1,116 @@
+---
+import SubTitle from "@components/sub-title.astro";
+import { Icon } from "astro-icon/components";
+
+const members = [
+  {
+    name: "Muhamad Rizal Arfiyan",
+    nim: "22.11.5227",
+    image: "/images/landing/author/rizal.jpg",
+    socials: {
+      github: "https://github.com/rizalarfiyan",
+      linkedin: "https://linkedin.com/in/rizalarfiyan",
+    },
+  },
+  {
+    name: "Gilang Nur Hidayat",
+    nim: "22.11.5196",
+    image: "/images/landing/author/gilang.jpg",
+    socials: {
+      github: "https://github.com/glngnoor",
+      linkedin: "https://linkedin.com/in/gilang-nur-hidayat",
+    },
+  },
+  {
+    name: "Damar Galih",
+    nim: "22.11.5209",
+    image: "/images/landing/author/damar.jpg",
+    socials: {
+      github: "https://github.com/damarglh",
+      linkedin: "https://linkedin.com/in/damar-galih",
+    },
+  },
+];
+
+const socialMeta = {
+  github: {
+    icon: "lucide:github",
+    classes: "group-hover/social:-translate-y-16",
+    name: "GitHub"
+  },
+  linkedin: {
+    icon: "lucide:linkedin",
+    classes: "group-hover/social:translate-x-16",
+    name: "LinkedIn"
+  },
+};
+---
+
+<section id="our-teams" class="py-20 md:py-28 bg-white">
+  <div class="container">
+    <div class="text-center mx-auto space-y-1 max-w-3xl flex flex-col items-center">
+        <SubTitle icon="lucide:users" title="Our Teams" class="mx-auto" />
+        <h2 class="text-5xl font-extrabold text-burnham-900">Meet Our Team Members</h2>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        members.map(({ image, name, nim, socials }) => (
+          <div class="bg-white group/card">
+            <div class="relative overflow-hidden aspect-[4/5] rounded-xl">
+              <img
+                src={image}
+                alt={`Image ${name}`}
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent"
+              >
+              </div>
+
+              <div class="absolute bottom-5 left-5">
+                <div
+                  class="group/social relative flex items-center justify-center"
+                >
+                  <div
+                    class="size-12 flex items-center justify-center bg-pistachio-500 rounded-full text-white shadow-md cursor-pointer"
+                  >
+                    <Icon name="lucide:share-2" class="size-6" />
+                  </div>
+
+                  {
+                    Object.entries(socials).map(([key, url]) => {
+                      const meta = socialMeta[key as keyof typeof socialMeta];
+                      if (!meta) return null;
+                      return (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${meta.name} Profile`}
+                          class:list={[
+                            "absolute size-12 flex items-center justify-center text-white bg-pistachio-500 rounded-full transition-all duration-300 ease-out scale-0 opacity-0 group-hover/social:scale-100 group-hover/social:opacity-100",
+                            meta.classes,
+                          ]}
+                        >
+                          <Icon name={meta.icon} class="size-6" />
+                        </a>
+                      );
+                    })
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center p-4 bg-white">
+              <h3 class="text-xl font-bold text-burnham-900">
+                {name}
+              </h3>
+              <p class="text-slate-500 mt-1">{nim}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
