@@ -4,6 +4,7 @@
     "": {
       "name": "landing-trash-collector",
       "dependencies": {
+        "@alpinejs/collapse": "^3.14.9",
         "@alpinejs/intersect": "^3.14.9",
         "@astrojs/alpinejs": "^0.4.8",
         "@iconify-json/lucide": "^1.2.54",
@@ -20,10 +21,14 @@
       },
       "devDependencies": {
         "@astrojs/partytown": "^2.1.4",
+        "@types/alpinejs__collapse": "^3.13.4",
+        "@types/alpinejs__intersect": "^3.13.4",
       },
     },
   },
   "packages": {
+    "@alpinejs/collapse": ["@alpinejs/collapse@3.14.9", "", {}, "sha512-cUjbBVo4KR/CfFg0cLB+Q7a8SnjmD4MdxmtZvFjh25Dlf/ZWYPSPx/28b+aAykuX/SUoDPQRmdFiVVvq+iILHw=="],
+
     "@alpinejs/intersect": ["@alpinejs/intersect@3.14.9", "", {}, "sha512-6LLIqrESA5kxuTbDJshtItfHmZoiiDOpf8lOeRrNtYjSj/FkggDpnjD+ZFGF5btEOVSpWic2VmG2BejR/aMxDw=="],
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
@@ -261,6 +266,10 @@
     "@trysound/sax": ["@trysound/sax@0.2.0", "", {}, "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="],
 
     "@types/alpinejs": ["@types/alpinejs@3.13.11", "", {}, "sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA=="],
+
+    "@types/alpinejs__collapse": ["@types/alpinejs__collapse@3.13.4", "", { "dependencies": { "@types/alpinejs": "*" } }, "sha512-kUBJWEDrHahD2Tb1lrir7iNTGN9ukvoJFjOY41EGC7F21E1KMSch5NrGgE0sqINrRT3lf1UZm3wxB3CNjJHBwg=="],
+
+    "@types/alpinejs__intersect": ["@types/alpinejs__intersect@3.13.4", "", { "dependencies": { "@types/alpinejs": "*" } }, "sha512-yoX6WO7AleeULOQvPz7rrx7FJmu6l033bM7QiGcWyvZjqF2KIut99ByUZO6OWUQuYmbRjxsKthGiUYNaAywHiA=="],
 
     "@types/debug": ["@types/debug@4.1.12", "", { "dependencies": { "@types/ms": "*" } }, "sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ=="],
 
