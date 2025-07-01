@@ -1,0 +1,104 @@
+---
+import Button from "@components/button.astro";
+import SubTitle from "@components/sub-title.astro";
+import { SITE } from "@config";
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+const contents = [
+  {
+    title: "Our Vision",
+    description:
+      "To become a leading digital waste management platform that encourages people to live cleaner and more environmentally friendly lives.",
+    icon: "lucide:globe",
+    class: "bg-pistachio-500 text-white",
+  },
+  {
+    title: "Our Mission",
+    description:
+      "Providing efficient, educational and inclusive waste management services through technology and community collaboration.",
+    icon: "lucide:target",
+    class: "bg-white border-2 border-pistachio-300",
+  },
+  {
+    title: "Our Goals",
+    description:
+      "Increasing public awareness and participation in responsible waste management to create a healthy and sustainable environment.",
+    icon: "lucide:trophy",
+    class: "bg-pistachio-900 text-white",
+  },
+];
+---
+
+<section id="about-us" class="py-28 relative">
+  <div class="container space-y-14">
+    <div class="flex gap-10 items-center justify-between">
+      <div class="space-y-1 max-w-2xl">
+        <SubTitle icon="lucide:factory" title="About Us" class="mx-auto" />
+        <h2 class="text-5xl text-burnham-900">
+          Together with Trash Collector for a Cleaner Earth
+        </h2>
+      </div>
+      <div class="max-w-3xl">
+        <p class="font-lg font-chivo text-burnham-700">
+          <b>Join Trash Collector</b> in building a cleaner, healthier Earth - one
+          action at a time. Every waste pickup you schedule earns you points and
+          brings us closer to our vision of a cleaner, more sustainable future through
+          smart technology.
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-10 items-center justify-between">
+      <div class="max-w-xl w-full relative">
+        <div
+          class="flex items-center justify-center rounded-lg bg-pistachio-50 w-full h-auto overflow-hidden aspect-square"
+        >
+          <img
+            src="/images/landing/trash.png"
+            class="mx-auto"
+            alt={SITE.title}
+          />
+        </div>
+        <div class="absolute -bottom-[52px] left-12 overflow-hidden rounded-lg">
+          <div
+            class="relative flex items-center justify-center px-6 py-4 bg-pistachio-900"
+          >
+            <img
+              src="/images/landing/map.png"
+              alt="Indonesia Map"
+              class="absolute opacity-20 h-[calc(100%_-_1.5rem)]"
+            />
+            <div class="text-6xl text-white font-chivo font-black">04+</div>
+          </div>
+          <div class="bg-pistachio-600 px-8 py-3">
+            <div class="text-xl text-white font-chivo font-bold">
+              Years of Experience
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-3xl w-full space-y-12">
+        <div class="max-w-xl space-y-12 relative">
+          <div
+            class="absolute h-4/5 left-6 top-2.5 -z-1 border-2 border-dashed border-pistachio-300"
+          >
+          </div>
+          {
+            contents.map((content) => (
+              <div class="flex gap-5 items-start">
+                <div class={cn("p-4 rounded-full", content.class)}>
+                  <Icon name={content.icon} class="size-5" />
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-3xl text-black">{content.title}</h3>
+                  <p class="text-burnham-700">{content.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <Button text="LEARN MORE" icon="lucide:arrow-up-right" />
+      </div>
+    </div>
+  </div>
+</section>

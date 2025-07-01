@@ -1,0 +1,93 @@
+---
+import SubTitle from "@components/sub-title.astro";
+import { Icon } from "astro-icon/components";
+
+const faqs = [
+  {
+    question: "What are the conditions for unsubscribing from the Trash Collector service?",
+    answer: "If you want to end your waste management service from Trash Collector, it is important to understand the termination terms and conditions. Whether you are an individual user, property manager, or business owner, make sure you follow the applicable procedures.",
+    open: true,
+  },
+  {
+    question: "What is the difference between recycling and regular waste processing?",
+    answer: "Recycling processing is a series of steps to collect, sort, clean, and transform waste into reusable raw materials. The main difference lies in how each type of waste is processed according to its category.",
+    open: true,
+  },
+  {
+    question: "What is the best way to move my service to a new address?",
+    answer: "To move your service, please contact our customer support at least two weeks in advance. We will guide you through the process of updating your address and ensuring a seamless transition of your waste collection schedule.",
+    open: false,
+  },
+  {
+    question: "What services are available at Trash Collector?",
+    answer: "We offer a range of services including regular household waste pickup, organic waste composting, specialized recycling for electronics and hazardous materials, and on-demand bulky item removal. Check our services page for a complete list.",
+    open: false,
+  },
+  {
+    question: "What is a late fee and when is it charged?",
+    answer: "A late fee is applied to your account if payment is not received by the due date specified on your invoice. The fee amount and grace period details can be found in our terms of service.",
+    open: false,
+  },
+  {
+    question: "How often will my trash be picked up?",
+    answer: "Pickup frequency depends on your subscribed plan. Standard plans include weekly pickups, but we also offer bi-weekly and daily options for businesses. You can view and manage your schedule through our mobile app.",
+    open: false,
+  },
+  {
+    question: "How is the waste sorting process carried out?",
+    answer: "Waste sorting is a critical step. At our facilities, we use a combination of manual labor and automated technology, including conveyor belts, optical sorters, and magnets, to separate materials like paper, plastic, glass, and metals accurately.",
+    open: false,
+  },
+  {
+    question: "Does Trash Collector support recycling programs?",
+    answer: "Absolutely. Supporting and promoting recycling is at the core of our mission. We collaborate with local communities, schools, and businesses to run educational recycling programs and improve recycling rates.",
+    open: false,
+  },
+];
+---
+
+<section id="faq" class="py-20 md:py-28 bg-white">
+  <div class="container" x-data={`accordion(${JSON.stringify(faqs)})`}>
+    <div class="text-center mx-auto space-y-1 max-w-3xl flex flex-col items-center">
+      <SubTitle icon="lucide:circle-help" title="List of Faq's" class="mx-auto" />
+      <h2 class="text-5xl font-extrabold text-burnham-900">You Might Find Your Answer</h2>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <template x-for="(item, index) in items" :key="index">
+        <div
+          class="bg-white rounded-xl overflow-hidden transition-shadow duration-300"
+          :class="{ 'shadow-lg shadow-slate-100': !item.open }"
+        >
+          <h2 class="font-medium">
+            <button
+              @click="toggle(index)"
+              type="button"
+              class="w-full flex items-center justify-between text-left p-5 transition"
+              :class="item.open ? 'bg-pistachio-100 text-burnham-900' : 'bg-pistachio-50/70 hover:bg-pistachio-100/80'"
+            >
+              <span class="font-semibold" x-text="item.question"></span>
+              <span class="flex-shrink-0 ml-4">
+                <Icon
+                  name="lucide:minus"
+                  class="size-5 transition-transform duration-300"
+                  x-show="item.open"
+                />
+                <Icon
+                  name="lucide:plus"
+                  class="size-5 transition-transform duration-300"
+                  x-show="!item.open"
+                />
+              </span>
+            </button>
+          </h2>
+          <div x-show="item.open" x-collapse>
+            <div class="p-5 pt-3 text-burnham-700">
+              <p x-text="item.answer"></p>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>

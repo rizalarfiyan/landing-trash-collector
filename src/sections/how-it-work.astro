@@ -1,0 +1,72 @@
+---
+import SubTitle from "@components/sub-title.astro";
+import { cn } from "@utils";
+import { Icon } from "astro-icon/components";
+
+const steps = [
+  {
+    num: "01.",
+    icon: "lucide:ham",
+    title: "Regular waste collection from homes and etc.",
+  },
+  {
+    num: "02.",
+    icon: "lucide:truck",
+    title: "Special vehicles used for different waste",
+  },
+  {
+    num: "03.",
+    icon: "lucide:recycle",
+    title: "Waste Processing & Treatment",
+  },
+  {
+    num: "04.",
+    icon: "lucide:leaf",
+    title: "Eco Friendly Products",
+  },
+];
+---
+
+<section class="bg-white py-16 sm:py-24">
+  <div class="container space-y-14">
+    <div class="text-center mx-auto space-y-1 max-w-3xl flex flex-col items-center">
+        <SubTitle icon="lucide:waypoints" title="How it Work" class="mx-auto" />
+        <h2 class="text-5xl text-burnham-900">Waste Management Process with Trash Collector</h2>
+    </div>
+    <div class="mt-16">
+      <div class="relative flex items-center justify-evenly gap-x-8 gap-y-16 px-20">
+        {
+          steps.map((step, idx) => {
+            const isOdd = idx % 2 === 1;
+            return (
+              <div class={cn('flex flex-col items-center text-center w-full max-w-72 sm:w-auto gap-4 xl:gap-16', isOdd ? 'xl:flex-col-reverse' : 'xl:-mt-8 xl:gap-12')}>
+                <div>
+                    <Icon 
+                      name={step.icon}
+                      class='size-14 text-pistachio-500'
+                      aria-label={step.title}
+                    />
+                </div>
+                <div class="mt-4">
+                  <h3 class="text-4xl font-bold text-pistachio-500">
+                    {step.num}
+                  </h3>
+                  <p class="mt-1 text-xl font-semibold font-chivo text-burnham-700">
+                    {step.title}
+                  </p>
+                </div>
+              </div>
+            );
+          })
+        }
+        <div class="absolute w-full text-pistachio-500 left-0 hidden xl:block">
+            <div class="w-full flex items-center justify-center relative pr-10">
+                <div class="absolute left-0 size-7 bg-current rounded-full"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-full" viewBox="0 0 410 30"><path fill="none" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5" stroke-linecap="round" d="M4.66 15C29.7 1.67 79.79 1.67 104.83 15S179.96 28.33 205 15s75.13-13.33 100.17 0 75.13 13.33 100.17 0"/></svg>
+                <Icon name="lucide:boxes" class="absolute right-0 size-12 fill-current" />
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

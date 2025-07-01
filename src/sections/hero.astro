@@ -1,0 +1,50 @@
+---
+import Button from "@components/button.astro";
+import SubTitle from "@components/sub-title.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  id="hero"
+  class="min-h-screen w-full items-center justify-center flex flex-col text-white bg-cover bg-no-repeat"
+  style="background-image: url('/images/landing/bg.jpg');"
+>
+  <div class="container relative">
+    <img src="/images/landing/map.png" alt="Indonesia Map" class="absolute -top-24 -left-20 opacity-30" />
+    <div class="max-w-4xl relative">
+      <SubTitle
+        icon="lucide:recycle"
+        title="Reducing, Reusing, Recycling"
+        class="mb-1"
+      />
+      <h1 class="text-white font-bold text-6xl">
+        Smart Solutions for Cleaner and More Organized Waste Management
+      </h1>
+      <Button
+        text="JOIN NOW"
+        size="lg"
+        variant="light"
+        icon="lucide:log-in"
+        class="mt-6"
+      />
+    </div>
+  </div>
+  <div class="absolute bottom-20 right-20 max-w-sm">
+    <div class="flex items-center flex-row gap-6 mb-3 pb-3 border-b-2 border-white/30">
+      {
+        ["Reducing", "Reusing", "Recycling"].map((item) => (
+          <div class="flex items-center gap-2">
+            <div class="size-6 p-1 bg-pistachio-500 text-white rounded-md">
+              <Icon name="lucide:check" class="size-4 large" />
+            </div>
+            <p class="text-white text-base font-chivo font-bold">{item}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="font-tinos text-2xl text-white leading-sm">
+      Arrange Garbage Transportation Services, Live More Calmly and Have a More
+      Comfortable Environment
+    </p>
+  </div>
+</section>
